@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AR-X Beginner's Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#101114;--panel:#17181c;--line:#2a2c31;--ink:#e8e6df;--body:#c9c8c2;--dim:#8b8d94;--inset:#0d0e10;--bar:rgba(16,17,20,.9);--on:#0c0d0f;--orange:#ff9f1c;--red:#e63946;--green:#4caf50;--blue:#2196f3;color-scheme:dark;font-size:16px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'JetBrains Mono',ui-monospace,sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:var(--orange);text-decoration:none;border-bottom:1px solid rgba(255,159,28,.35)}a:hover{border-bottom-color:var(--orange)}
+a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:.9rem;padding:1rem 1.25rem;background:var(--bar);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.led{width:11px;height:11px;border-radius:2px;background:var(--red);box-shadow:0 0 8px 1px rgba(230,57,70,.7);flex:none}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.02em}.brand span{color:var(--orange)}
+.topbar .back{margin-left:auto;font-size:.82rem}
+.wrap{max-width:760px;margin:0 auto;padding-inline:1.25rem;padding-block:2.5rem 5rem}
+.kicker{font-size:.78rem;color:var(--dim);letter-spacing:.08em;margin-bottom:.6rem}
+h1{font-family:'Space Grotesk','Hiragino Sans','Noto Sans JP',sans-serif;font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.25;margin:0 0 2rem;text-wrap:balance}
+.toc{display:flex;flex-wrap:wrap;gap:.5rem .6rem;margin:0 0 2.5rem;padding:0}
+.toc a{font-size:.78rem;border:1px solid var(--line);border-radius:4px;padding:.25rem .6rem;color:var(--body);background:var(--panel)}
+.toc a:hover{border-color:var(--orange);color:var(--orange)}
+h2{font-family:'Space Grotesk','Hiragino Sans','Noto Sans JP',sans-serif;font-size:1.2rem;margin:3rem 0 1rem;padding-top:1.4rem;border-top:1px solid var(--line);scroll-margin-top:5rem}
+h3{font-family:'Space Grotesk','Hiragino Sans','Noto Sans JP',sans-serif;font-size:1rem;color:var(--orange);margin:2rem 0 .6rem}
+p,li{color:var(--body);font-size:.92rem}p{margin:.7rem 0}ul,ol{margin:.6rem 0;padding-left:1.3rem}li{margin-bottom:.35rem}
+strong{color:var(--ink)}
+.tw{overflow-x:auto;margin:1rem 0;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:420px}
+th,td{text-align:left;vertical-align:top;padding:.6rem .85rem;border-bottom:1px solid var(--line);font-size:.86rem;color:var(--body)}
+th{color:var(--ink);background:var(--inset);font-weight:700;white-space:nowrap}tr:last-child td{border-bottom:none}
+td:first-child{color:var(--ink);white-space:nowrap}
+footer{text-align:center;color:var(--dim);font-size:.75rem;padding-top:2.5rem}
+@media(max-width:520px){.wrap{padding-inline:1rem}.topbar{padding-inline:1rem}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="led"></div><div class="brand">AR-X <span>GROOVEBOX</span></div><a class="back" href="guide.html" lang="ja">日本語</a><a class="back" style="margin-left:1rem" href="./">Support</a></div>
+<div class="wrap">
+<div class="kicker">BEGINNER'S GUIDE</div>
+<h1>AR-X Beginner's Guide<br><span style="font-size:.6em;color:var(--dim);font-weight:500">A manual simple enough for kids</span></h1>
+<nav class="toc" aria-label="Contents"><a href="#s1">1. What is AR-X?</a><a href="#s2">2. Make your first sound</a><a href="#s3">3. Names on the screen</a><a href="#s4">4. Page map</a><a href="#s5">5. Play the drums</a><a href="#s6">6. Make a melody</a><a href="#s7">7. Change the synth sound</a><a href="#s8">8. Play with effects (XY pad)</a><a href="#s9">9. BPM and balance</a><a href="#s10">10. Saving and recalling</a><a href="#s11">11. Sync tempo with other apps (Ableton Link)</a><a href="#s12">12. Connect a MIDI keyboard or controller</a><a href="#s13">13. Recording (REC)</a><a href="#s14">14. Troubleshooting</a><a href="#s15">15. Glossary</a></nav>
+
+<h2 id="s1">1. What is AR-X?</h2>
+<p>AR-X is an app for making music on your iPhone or iPad. You don't need a piano or a guitar. Just touch the screen to play drums and melodies.</p>
+<p>Think of it as <strong>building blocks made of sound</strong>. You line up a drum block, a melody block and a synth block (an instrument that makes strange and wonderful sounds) to build a song that is all your own.</p>
+<p>What you can do:</p>
+<ul><li>Play drums (boom, tap, tss-tss)</li><li>Line up notes and repeat them (a sequencer)</li><li>Change the synth sound (soft sounds, sharp sounds, and more)</li><li>Make fun sounds with effects (draw on the XY pad with your finger)</li><li>Save your songs and recall them later</li><li>Record your own performance</li><li>Connect a MIDI keyboard or other music apps</li></ul>
+
+<h2 id="s2">2. Make your first sound</h2>
+<p>Just three things to do, and you'll hear music.</p>
+<ol><li><strong>Open the app.</strong> Tap AR-X on your Home Screen. Turn off your iPhone's silent switch and turn the volume up.</li><li><strong>Tap "PLAY".</strong> The button lights up and the rhythm starts.</li><li><strong>Tap "PLAY" again.</strong> The light goes out and the sound stops.</li></ol>
+<p>To change the tempo (speed), turn the round knob labeled <strong>BPM</strong> with your finger. Turn it right to go faster, left to go slower.</p>
+<p>No sound? See "14. Troubleshooting".</p>
+
+<h2 id="s3">3. Names on the screen</h2>
+<p>The <strong>left edge</strong> of the screen has the same buttons on every page, like a remote control. They stay put when you change pages.</p>
+<div class="tw"><table><tr><th>Button / knob</th><th>What it does</th></tr><tr><td>PLAY</td><td>Start and stop (toggles each time you tap)</td></tr><tr><td>BPM (knob)</td><td>Tempo. Check the number in the display</td></tr><tr><td>KICK / SNARE / HAT</td><td>Drums on/off. Lit = playing, unlit = muted (silent)</td></tr><tr><td>SEQ A / SEQ B</td><td>Melodies on/off. There are two melodies (A and B), switched separately</td></tr><tr><td>PTN A / B / C</td><td>Choose one of three drum patterns (rhythm shapes)</td></tr><tr><td>&lt;PAGE / PAGE&gt;</td><td>Go back or forward one page</td></tr><tr><td>SEQ CTRL … DRUM EDIT</td><td>Six buttons that jump to the page you want</td></tr><tr><td>MIDI / REC EXPORT</td><td>The MIDI page, and the recording/export page</td></tr><tr><td>XY PAD</td><td>A pad you draw on with your finger to change the sound</td></tr><tr><td>FX1–FX3 (EDIT / HOLD / MIX)</td><td>Effect (sound makeup) settings</td></tr><tr><td>BALANCE SYN-DRM</td><td>Which is louder: synth or drums</td></tr><tr><td>USER A / B / C, SAVE</td><td>Put your sounds in a box and take them out again</td></tr><tr><td>LINK</td><td>Match tempo with other apps</td></tr></table></div>
+<p>A <strong>knob</strong> is a round dial you turn with your finger. A <strong>fader</strong> is a bar you slide up and down. Buttons are tapped.</p>
+
+<h2 id="s4">4. Page map</h2>
+<p>AR-X is made of <strong>8 pages</strong>, like a book. Use the buttons on the left to jump around.</p>
+<div class="tw"><table><tr><th>Page</th><th>Button</th><th>What you can do here</th></tr><tr><td>1</td><td>SEQ CTRL</td><td>Set the melody's pitch (PITCH) and octave</td></tr><tr><td>2</td><td>SEQ EDIT</td><td>Melody strength (V1/V2), length (GATE), and pitch shifts (TRANSPOSE)</td></tr><tr><td>3</td><td>SYN CTRL</td><td>Synth steps (ON) and sliding between notes (GRIDE)</td></tr><tr><td>4</td><td>SYN EDIT</td><td>Build the synth sound in detail</td></tr><tr><td>5</td><td>DRUM CTRL</td><td>Make the drum rhythm with buttons</td></tr><tr><td>6</td><td>DRUM EDIT</td><td>Change the drum sounds (pitch, length, distortion, and more)</td></tr><tr><td>7</td><td>MIDI</td><td>Connect MIDI gear</td></tr><tr><td>8</td><td>REC EXPORT</td><td>Record, and export/import your project</td></tr></table></div>
+<p>There are two ways to change pages.</p>
+<ul><li>Tap the button of the page you want.</li><li>Use <strong>&lt;PAGE</strong> and <strong>PAGE&gt;</strong> to move to the neighbor. They cycle through pages 1→2→3→4→5→6 (MIDI and REC can't be reached with these buttons).</li></ul>
+<p>Only the button for the page you're on is lit.</p>
+
+<h2 id="s5">5. Play the drums</h2>
+<p>Make the rhythm on "DRUM CTRL" (page 5) and change the sounds on "DRUM EDIT" (page 6).</p>
+<h3>Make a rhythm (DRUM CTRL)</h3>
+<ol><li>Tap the "DRUM CTRL" button.</li><li>Buttons are lined up in four rows: <strong>KICK (boom), SNR (tap), CHH (closed hi-hat, "tss") and OHH (open hi-hat, "tsss")</strong>.</li><li>Each row has buttons "1–16". <strong>Tap a button and a sound plays at that spot</strong> (it lights up). Tap again to turn it off.</li><li>Press PLAY and the sounds play from 1 to 16 in order, then loop back around.</li></ol>
+<p>For example, put KICK on "1, 5, 9, 13" and you get the classic "boom, boom, boom, boom" beat.</p>
+<p>Under each step there is also a small "ACC" button. It means "accent". Light it up and that sound plays a little stronger.</p>
+<h3>Patterns A / B / C</h3>
+<p>You can keep <strong>three separate rhythms</strong>. Tap <strong>PTN A / PTN B / PTN C</strong> on the left to switch. For example, use A for a "calm rhythm" and B for a "busy rhythm".</p>
+<h3>Change the sounds (DRUM EDIT)</h3>
+<p>Tap "DRUM EDIT" and knobs appear for each drum. KICK, SNARE and HI HAT have these knobs.</p>
+<div class="tw"><table><tr><th>Knob</th><th>When to turn it</th></tr><tr><td>TUNE</td><td>Pitch of the sound. Right = higher, left = lower</td></tr><tr><td>DECAY</td><td>How long the sound rings. HI HAT also has O.DECAY for the open sound</td></tr><tr><td>LEVEL</td><td>Volume of that drum</td></tr><tr><td>DIST</td><td>Switch that distorts the drum (rough and crunchy)</td></tr><tr><td>CRSH</td><td>Switch that makes the drum gritty (the crusher)</td></tr><tr><td>FX1–FX4</td><td>How much to send to each effect</td></tr></table></div>
+<p>At the bottom right of the page are the shared <strong>DISTORTION</strong> and <strong>CRUSH</strong> settings.</p>
+<ul><li>DISTORTION: DRIVE (how strong), LEVEL (volume), HARD / MID / SOFT (type of distortion)</li><li>CRUSH: FREQ, LEVEL, 12BIT / 8BIT / 4BIT (the smaller the number, the grittier)</li></ul>
+
+<h2 id="s6">6. Make a melody</h2>
+<p>You can play two melodies at once: "SEQ A" and "SEQ B". Think of a guitar and a bass. Turn each on or off with the "SEQ A" and "SEQ B" buttons on the left.</p>
+<h3>Set the pitch (SEQ CTRL)</h3>
+<ol><li>Tap the "SEQ CTRL" button (page 1).</li><li>Slide PITCH (the vertical bar) up and down. Up is a higher sound, down is a lower sound.</li><li>The <strong>+ / − buttons</strong> move the sound one more octave (from one "do" to the next "do") higher or lower.</li><li>Turn the 4BIT PTN knob to change the shape of "when sounds play". Turning right makes patterns with more notes.</li><li>The small lights (LEDs) above the knob show where the sound plays now.</li></ol>
+<p>In short: PITCH is "which note", and 4BIT PTN is "when to play it".</p>
+<h3>Set strength and length (SEQ EDIT)</h3>
+<p>On the "SEQ EDIT" button (page 2) you can fine-tune more.</p>
+<div class="tw"><table><tr><th>This</th><th>What it does</th></tr><tr><td>V1 / V2 buttons</td><td>Choose how strongly the note plays (velocity)</td></tr><tr><td>V0 / V1 / V2 knobs</td><td>Set the strength amounts themselves</td></tr><tr><td>GATE (vertical bar)</td><td>Note length. Up = longer, down = short and snappy</td></tr><tr><td>TRANSPOSE (knob)</td><td>Every 4 bars, shift the whole melody's pitch at once</td></tr></table></div>
+<p>With <strong>TRANSPOSE</strong>, the same melody can change over time, for example "normal in bar 1, a little lower in bar 3".</p>
+<p>Tip: set SEQ A and SEQ B to slightly different pitches for pretty harmonies (notes layered together).</p>
+
+<h2 id="s7">7. Change the synth sound</h2>
+<p>A synth is an instrument that makes strange sounds. AR-X uses a method called <strong>FM</strong> to make sparkly, bell-like and metallic sounds.</p>
+<h3>What is FM?</h3>
+<p>When a "main sound" is wobbled by a "wobbler sound", you get a bubbly, mysterious tone. It's like pushing a swing while another person shakes its chains: the motion gets more complicated.</p>
+<ul><li><strong>CAR (carrier)</strong>: the main sound</li><li><strong>MOD (modulator)</strong>: the wobbler sound</li></ul>
+<h3>Page 3: SYN CTRL</h3>
+<ul><li><strong>ON (buttons)</strong>: for each of the 8 steps, whether to use that spot's settings.</li><li><strong>GRIDE</strong>: notes connect with a smooth slide, like a snake gliding.</li><li><strong>GRIDE TIME / MGR TIME (knobs)</strong>: how long the slide takes.</li><li><strong>STEP SEQ / LOOP X2 / AS 8TH</strong>: switches that choose the shape of the repeat.</li></ul>
+<h3>Page 4: SYN EDIT</h3>
+<p>This is the "sound workshop". There are many knobs, so at first it's plenty of fun to touch <strong>only these</strong> (we recommend TUNE, MOD IDX, ATK and REL).</p>
+<div class="tw"><table><tr><th>Knob / button</th><th>Role</th></tr><tr><td>TUNE</td><td>Shifts the pitch of everything</td></tr><tr><td>GAIN</td><td>Volume</td></tr><tr><td>MOD IDX</td><td>How big the wobbler is (higher = sparkly and gritty)</td></tr><tr><td>MOD FBK</td><td>Feeds the wobbler back into itself for a thick, gooey sound</td></tr><tr><td>MOD RATE / CAR RATE</td><td>Pitch ratio of the wobbler and the main sound</td></tr><tr><td>SIN / TRI / SQR / SAW</td><td>Sound shape. SIN is soft, SQR and SAW are sharp</td></tr><tr><td>ATK / DEC / SUS / REL</td><td>Shape of the start and end of a sound (see below)</td></tr><tr><td>HI PASS / LO PASS</td><td>Cut high sounds or low sounds</td></tr><tr><td>SERIES / PARALLEL</td><td>Apply the wobbler to the main sound, or play the two side by side</td></tr><tr><td>LFO RT / DEP / DEL</td><td>A vibrato-like wobble. Speed, depth, and delay before it starts</td></tr><tr><td>UNISON ON</td><td>Layers the same sound slightly shifted to make it thick</td></tr><tr><td>4/8/16/32 BIT</td><td>Makes the sound gritty on purpose (smaller number = grittier)</td></tr><tr><td>FX1–FX4</td><td>Send a little to the effects</td></tr></table></div>
+<p><strong>What are ATK / DEC / SUS / REL?</strong> A piano goes "pong!" and quickly gets quieter; a violin swells gently and fades slowly. These four settings decide that "shape".</p>
+<ul><li>ATK (attack): time it takes to reach full volume</li><li>DEC (decay): time to fall from full volume to a comfortable level</li><li>SUS (sustain): volume while you hold the note</li><li>REL (release): time to fade out after you let go</li></ul>
+<p>Nothing can break, so turn things and hunt for fun sounds.</p>
+
+<h2 id="s8">8. Play with effects (XY pad)</h2>
+<p>Effects are “magic” you add to the sound. You can make it muffled, or add an echo like a mountain call. The square pad on the left edge is the <strong>XY PAD</strong>.</p>
+<h3>How to use it</h3>
+<ol><li>Use the <strong>FX EDIT</strong> button to choose the effect to play with (FX1–FX4).</li><li>Touch the pad with your finger. The sound changes with your horizontal (X) and vertical (Y) position.</li><li>Use the <strong>FX MIX</strong> knob to choose how much of the effect you hear.</li><li>Light up <strong>FX HOLD</strong> and the effect stays at that position even after you lift your finger.</li></ol>
+<h3>The four effects</h3>
+<div class="tw"><table><tr><th>Effect</th><th>What it sounds like</th><th>Horizontal (X)</th><th>Vertical (Y)</th></tr><tr><td>FX1</td><td>Muffled sound (low-pass filter)</td><td>Right = bright, left = muffled</td><td>Up = stronger character</td></tr><tr><td>FX2</td><td>Whooshing like a jet plane (flanger)</td><td>Speed of the sweep</td><td>Stronger effect</td></tr><tr><td>FX3</td><td>Mountain-call echo (delay)</td><td>Gap between echoes</td><td>How long the echoes keep repeating</td></tr><tr><td>FX4</td><td>Bath or concert-hall ring (reverb)</td><td>Length of the ring</td><td>Softness of the sound</td></tr></table></div>
+<h3>Which instrument gets the effect?</h3>
+<p>Use the <strong>FX1–FX4</strong> buttons on the drum and synth pages (DRUM EDIT, SYN EDIT) to choose which instrument you want. The instrument's sound is sent to each lit effect.</p>
+
+<h2 id="s9">9. BPM and balance</h2>
+<h3>BPM (speed)</h3>
+<p>BPM is "how many beats per minute". The bigger the number, the faster the song.</p>
+<ul><li>Turn the <strong>BPM knob</strong> on the left.</li><li>The range is 40 to 240. It starts at 120.</li><li>Check the current number in the display just above.</li></ul>
+<p>In a game, think of it as deciding a character's "walking speed".</p>
+<h3>BALANCE SYN-DRM</h3>
+<p>This knob balances the loudness of the synth (SYN) and the drums (DRM). Like a seesaw, making one louder makes the other quieter.</p>
+<ul><li>Middle: synth and drums are nicely balanced</li><li>Turn left: drums sound louder</li><li>Turn right: synth sounds louder</li></ul>
+<p>This knob is on every page, so you can use it anytime.</p>
+
+<h2 id="s10">10. Saving and recalling</h2>
+<p>You can tuck away your sounds and rhythms like putting them in a trunk. Learn a few rules and it isn't hard.</p>
+<h3>The keys, simply</h3>
+<ul><li><strong>USER A / USER B / USER C</strong>: three "boxes". These buttons choose the box.</li><li><strong>Slots 1, 2, 3, 4</strong>: the room numbers inside a box. Each box holds 4.</li><li><strong>SAVE</strong>: the button you press to "store what's on this page".</li></ul>
+<p>Note that saves are <strong>kept separately for each page</strong>. For example, something saved on DRUM CTRL can only be recalled on DRUM CTRL.</p>
+<h3>Save</h3>
+<ol><li>Open the page you want to save.</li><li>Choose USER A, B or C.</li><li>Tap <strong>SAVE</strong>. The button lights up.</li><li>Tap the number (1–4) you want to save to.</li><li>When asked to confirm, tap <strong>YES</strong>. NO means "don't store it here", and CANCEL means "never mind".</li></ol>
+<p>On SEQ CTRL / SEQ EDIT, it asks once more, "Save SEQ A?", so you don't overwrite something by accident.</p>
+<p>[Important] If you save to a number that already has something in it, <strong>the old content is erased</strong>. Use an empty number for sounds you care about.</p>
+<h3>Recall</h3>
+<ol><li>Open the page you want to recall on.</li><li>Choose USER A / B / C.</li><li><strong>Without pressing SAVE</strong>, tap the number (1–4).</li></ol>
+<p>If it says "empty", nothing has been saved in that number yet.</p>
+<p>The app comes with four demo melodies and synth sounds (USER A). Feel free to overwrite them.</p>
+<h3>Turn a project into a file (EXPORT / IMPORT)</h3>
+<p>The "REC EXPORT" page has <strong>EXPORT</strong> and <strong>IMPORT</strong> buttons.</p>
+<ul><li>EXPORT: turns your current work into a file that you can save or send from the share menu.</li><li>IMPORT: pick a saved file to bring your work back.</li></ul>
+<p>Handy when you reinstall the app or want to give a friend your work.</p>
+
+<h2 id="s11">11. Sync tempo with other apps (Ableton Link)</h2>
+<p>Link is a way for everyone to "play at the same tempo". It's like a band all watching the drummer to keep the rhythm together. You can match tempo and start with other apps that support the same technology, or with other iPhones and iPads.</p>
+<h3>How to use it</h3>
+<ol><li>Use the app together with other devices on the same Wi‑Fi.</li><li>Tap the "LINK" button on the left.</li><li>The Link settings open. Turn the switch on.</li><li>The first time, if iPhone asks whether to allow "Local Network" access, choose "Allow".</li><li>While it looks for friends, it shows "Ableton Link: searching for peers…". Once found, the tempo matches automatically.</li></ol>
+<p>To turn it off, tap "LINK" again.</p>
+<h3>Don't worry</h3>
+<ul><li>Even with no friends around, the app works normally.</li><li>If you turn Link off, the sound that's playing keeps going.</li><li>While Link is on, pressing PLAY starts aligned with the beat position of the other apps.</li></ul>
+
+<h2 id="s12">12. Connect a MIDI keyboard or controller</h2>
+<p>MIDI is like a "language" that connects instruments and controllers to apps. Connect a device with knobs and faders and you can move the on-screen knobs with real ones.</p>
+<h3>Connect and link (LEARN)</h3>
+<ol><li>Connect your controller to the iPhone or iPad.</li><li>Open the MIDI page with the "MIDI" button.</li><li>Choose your device from the list on the "MIDI" page. If it says "Connected", you're good.</li><li>Tap <strong>LEARN</strong> (the button lights up).</li><li>Tap a <strong>red button, knob or fader</strong> on the screen.</li><li>Move the real control on your controller. When it says "learned", the link is done.</li></ol>
+<p>Repeat to link as many as you like. The links are remembered even after you close the app.</p>
+<h3>Easier linking (NAV LEARN)</h3>
+<p>Press <strong>NAV LEARN</strong> and the app tells you in order, "move this one", "now this one". Just move your controller's knobs in turn to link lots of controls. To stop, press NAV LEARN again.</p>
+<h3>Start over</h3>
+<p>Press <strong>CLEAR ALL</strong> to erase every link.</p>
+<h3>Don't be surprised</h3>
+<p>Sometimes the sound doesn't change right away when you move a knob on your controller. This is a safety feature so the on-screen knob doesn't suddenly jump. Move your knob to where the on-screen knob is, and they connect and start moving together.</p>
+<p>"MIDI MONITOR" shows the signals arriving now, which is handy to check that everything is connected.</p>
+
+<h2 id="s13">13. Recording (REC)</h2>
+<p>You can save the sound you made as an audio file (WAV), like recording to a cassette tape. It records the sound playing in the app directly, so you don't need a microphone.</p>
+<h3>How to do it</h3>
+<ol><li>Open the recording page with the "REC EXPORT" button.</li><li>Choose how long to record: <strong>MANUAL</strong> (you stop it), 1 BAR, 2 BARS, 4 BARS, 8 BARS or 16 BARS.</li><li>Press PLAY to start the sound.</li><li>Tap <strong>REC</strong>. It shows "● REC…" and the seconds so far.</li><li>With MANUAL, tap REC again to stop. If you chose a number of bars, it stops automatically at that length.</li><li>When it stops, a WAV file is made.</li></ol>
+<p>"1 bar" means "4 beats". At BPM 120, one bar is 2 seconds.</p>
+<p>Set the tempo and balance before you record, and you'll have fewer retakes.</p>
+
+<h2 id="s14">14. Troubleshooting</h2>
+<div class="tw"><table><tr><th>Problem</th><th>Try this</th></tr><tr><td>No sound</td><td>Turn up your iPhone volume. Turn off the side switch (silent mode). Check that you pressed PLAY. Check that KICK, SNARE, HAT, SEQ A and SEQ B are lit (unlit means silent).</td></tr><tr><td>Only the drums, or only the synth, is quiet</td><td>Check whether the BALANCE SYN-DRM knob is too far to one side, and try returning it to the middle.</td></tr><tr><td>Sound stops when I go to the Home Screen</td><td>In iPhone "Settings" → AR-X, check that "Background Playback" is on. If on, it keeps playing on the Home Screen. If off, it stops when you leave the app (this saves battery).</td></tr><tr><td>Sound skips or rhythm drifts</td><td>Close other apps. Check that the device isn't hot. If that doesn't help, close the app once and open it again.</td></tr><tr><td>Only the synth sound disappeared</td><td>Close the app once and open it again. If it still isn't fixed, please tell us when and on which page it happened.</td></tr><tr><td>Link can't find friends</td><td>Check that you're on the same Wi‑Fi. In iPhone "Settings", check that AR-X's "Local Network" is on. Turn LINK off, then on again.</td></tr><tr><td>MIDI device not found</td><td>Reconnect the cable. Choose the device again on the MIDI page.</td></tr><tr><td>I accidentally erased my sound</td><td>When saving, answer the "Save?" question with YES carefully. Keep important work safe by turning it into a file with EXPORT.</td></tr></table></div>
+
+<h2 id="s15">15. Glossary</h2>
+<div class="tw"><table><tr><th>Word</th><th>Simple meaning</th></tr><tr><td>BPM</td><td>Tempo. The speed of the rhythm</td></tr><tr><td>Sequencer</td><td>A system that lines up sounds in order and repeats them automatically</td></tr><tr><td>Step</td><td>A square in the rhythm grid. One button is one square</td></tr><tr><td>Bar</td><td>A group of 4 beats</td></tr><tr><td>Pattern</td><td>A rhythm shape</td></tr><tr><td>Synth</td><td>An instrument that makes strange sounds</td></tr><tr><td>Knob</td><td>A dial you turn</td></tr><tr><td>Fader</td><td>A bar you slide up and down</td></tr><tr><td>Effect</td><td>Makeup for sound</td></tr><tr><td>Octave</td><td>Same-named notes at higher or lower pitch. + goes higher, − goes lower</td></tr><tr><td>Velocity</td><td>How strong a note is. Hit harder, louder sound</td></tr><tr><td>GATE</td><td>Length of a note</td></tr><tr><td>Accent (ACC)</td><td>A marker meaning "play this one strong!"</td></tr><tr><td>Mute</td><td>Temporarily silencing a sound</td></tr><tr><td>Crusher (CRUSH)</td><td>An effect that makes sound gritty</td></tr><tr><td>Distortion (DIST)</td><td>An effect that distorts the sound</td></tr><tr><td>MIDI</td><td>A common language that connects instruments and apps</td></tr><tr><td>LINK</td><td>A way to match tempo with other apps</td></tr><tr><td>WAV</td><td>A file that keeps sound exactly as it is</td></tr></table></div>
+
+<footer>© 2026 AR-X Groovebox · <a href="./">Support &amp; Privacy Policy</a></footer>
+</div>
+</body>
+</html>
