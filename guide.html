@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AR-X はじめてガイド</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#101114;--panel:#17181c;--line:#2a2c31;--ink:#e8e6df;--body:#c9c8c2;--dim:#8b8d94;--inset:#0d0e10;--bar:rgba(16,17,20,.9);--on:#0c0d0f;--orange:#ff9f1c;--red:#e63946;--green:#4caf50;--blue:#2196f3;color-scheme:dark;font-size:16px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'JetBrains Mono',ui-monospace,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:var(--orange);text-decoration:none;border-bottom:1px solid rgba(255,159,28,.35)}a:hover{border-bottom-color:var(--orange)}
+a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:.9rem;padding:1rem 1.25rem;background:var(--bar);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.led{width:11px;height:11px;border-radius:2px;background:var(--red);box-shadow:0 0 8px 1px rgba(230,57,70,.7);flex:none}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.02em}.brand span{color:var(--orange)}
+.topbar .back{margin-left:auto;font-size:.82rem}
+.wrap{max-width:760px;margin:0 auto;padding-inline:1.25rem;padding-block:2.5rem 5rem}
+.kicker{font-size:.78rem;color:var(--dim);letter-spacing:.08em;margin-bottom:.6rem}
+h1{font-family:'Space Grotesk','Hiragino Sans','Noto Sans JP',sans-serif;font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.25;margin:0 0 2rem;text-wrap:balance}
+.toc{display:flex;flex-wrap:wrap;gap:.5rem .6rem;margin:0 0 2.5rem;padding:0}
+.toc a{font-size:.78rem;border:1px solid var(--line);border-radius:4px;padding:.25rem .6rem;color:var(--body);background:var(--panel)}
+.toc a:hover{border-color:var(--orange);color:var(--orange)}
+h2{font-family:'Space Grotesk','Hiragino Sans','Noto Sans JP',sans-serif;font-size:1.2rem;margin:3rem 0 1rem;padding-top:1.4rem;border-top:1px solid var(--line);scroll-margin-top:5rem}
+h3{font-family:'Space Grotesk','Hiragino Sans','Noto Sans JP',sans-serif;font-size:1rem;color:var(--orange);margin:2rem 0 .6rem}
+p,li{color:var(--body);font-size:.92rem}p{margin:.7rem 0}ul,ol{margin:.6rem 0;padding-left:1.3rem}li{margin-bottom:.35rem}
+strong{color:var(--ink)}
+.tw{overflow-x:auto;margin:1rem 0;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:420px}
+th,td{text-align:left;vertical-align:top;padding:.6rem .85rem;border-bottom:1px solid var(--line);font-size:.86rem;color:var(--body)}
+th{color:var(--ink);background:var(--inset);font-weight:700;white-space:nowrap}tr:last-child td{border-bottom:none}
+td:first-child{color:var(--ink);white-space:nowrap}
+footer{text-align:center;color:var(--dim);font-size:.75rem;padding-top:2.5rem}
+@media(max-width:520px){.wrap{padding-inline:1rem}.topbar{padding-inline:1rem}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="led"></div><div class="brand">AR-X <span>GROOVEBOX</span></div><a class="back" href="./">サポート</a></div>
+<div class="wrap">
+<div class="kicker">BEGINNER'S GUIDE</div>
+<h1>AR-X はじめてガイド<br><span style="font-size:.6em;color:var(--dim);font-weight:500">子どもにもわかる説明書</span></h1>
+<nav class="toc" aria-label="もくじ"><a href="#s1">1. AR-Xってなに？</a><a href="#s2">2. はじめて音を出そう</a><a href="#s3">3. 画面のなまえ</a><a href="#s4">4. ページちず</a><a href="#s5">5. ドラムをならそう</a><a href="#s6">6. メロディをつくろう</a><a href="#s7">7. シンセの音色をかえよう</a><a href="#s8">8. エフェクト（XYパッド）であそぼう</a><a href="#s9">9. BPMとバランス</a><a href="#s10">10. 保存とよびだし</a><a href="#s11">11. ほかのアプリとテンポをあわせる（Ableton Link）</a><a href="#s12">12. MIDIキーボード・コントローラーをつなぐ</a><a href="#s13">13. 録音 (REC)</a><a href="#s14">14. こまったときは</a><a href="#s15">15. ことばじてん</a></nav>
+<h2 id="s1">1. AR-Xってなに？</h2>
+<p>AR-Xは、iPhoneやiPadで「音楽をつくる」ためのアプリです。ピアノやギターがなくても、画面をさわるだけで、ドラムやメロディの音をならせます。</p>
+<p>たとえるなら、<strong>おとのレゴブロック</strong>です。ドラムのブロック、メロディのブロック、シンセ（ふしぎな音を出す楽器）のブロックをならべて、自分だけの曲をつくります。</p>
+<p>できること：</p>
+<ul><li>ドラムをならす（ドン・タン・チッチッ）</li><li>メロディをならべて、くりかえしならす（シーケンサー）</li><li>シンセの音色をかえる（やわらかい音、とがった音など）</li><li>エフェクトでおもしろい音にする（XYパッドを指でなぞる）</li><li>つくった曲をほぞんして、あとでよびだす</li><li>自分の演奏を録音する</li><li>MIDIキーボードや、ほかの音楽アプリとつなぐ</li></ul>
+<h2 id="s2">2. はじめて音を出そう</h2>
+<p>まずは3つだけ。これで音がなります。</p>
+<ol><li><strong>アプリをひらく。</strong> ホーム画面の AR-X をさわります。このとき、iPhoneの「こうどうスイッチ（マナーモード）」をオフにして、音量をあげておきましょう。</li><li><strong>「PLAY」ボタンをタップ。</strong> ボタンが光って、リズムがなりはじめます。</li><li><strong>もう一度「PLAY」をタップ。</strong> 光が消えて、音がとまります。</li></ol>
+<p>テンポ（はやさ）をかえたいときは、<strong>BPM</strong>と書いてあるマルいツマミ（ノブ）を指でまわします。右にまわすとはやく、左にまわすとゆっくりになります。</p>
+<p>こまったら：音がでないときは、「14. こまったときは」をみてね。</p>
+<h2 id="s3">3. 画面のなまえ</h2>
+<p>画面の<strong>左のふち</strong>には、どのページでも同じボタンがならんでいます。リモコンのようなものです。ページをかえても、ここはいつもいっしょです。</p>
+<div class="tw"><table><tr><th>ボタン・ノブ</th><th>なにをする？</th></tr><tr><td>PLAY</td><td>スタートとストップ（押すたびに切りかわる）</td></tr><tr><td>BPM（ノブ）</td><td>テンポ。数字は表示窓で確かめられる</td></tr><tr><td>KICK / SNARE / HAT</td><td>ドラムのオン・オフ。光っている＝なる、消えている＝ミュート（だまっている）</td></tr><tr><td>SEQ A / SEQ B</td><td>メロディのオン・オフ。メロディは2つ（AとB）あり、べつべつに切りかえられる</td></tr><tr><td>PTN A / B / C</td><td>ドラムのパターン（リズムの型）を3つからえらぶ</td></tr><tr><td>&lt;PAGE / PAGE&gt;</td><td>ページをとなりへ進む・戻る</td></tr><tr><td>SEQ CTRL … DRUM EDIT</td><td>見たいページへとぶボタン（6つ）</td></tr><tr><td>MIDI / REC EXPORT</td><td>MIDIのページと、録音・書き出しのページ</td></tr><tr><td>XY PAD</td><td>指でなぞって音をどんどんかえるパッド</td></tr><tr><td>FX1〜FX3 (EDIT / HOLD / MIX)</td><td>エフェクト（音のおけしょう）の設定</td></tr><tr><td>BALANCE SYN-DRM</td><td>シンセとドラムのどっちを大きくするか</td></tr><tr><td>USER A / B / C, SAVE</td><td>つくった音をはこにしまう・とりだす</td></tr><tr><td>LINK</td><td>ほかのアプリとテンポをあわせる</td></tr></table></div>
+<p><strong>ノブ</strong>は、指でクルクルとまわすマルいつまみ。<strong>フェーダー</strong>は、上下にすべらせる棒です。ボタンは、ポンとタップします。</p>
+<h2 id="s4">4. ページちず</h2>
+<p>AR-Xは、本のページのように<strong>8つのページ</strong>でできています。左のボタンでとびます。</p>
+<div class="tw"><table><tr><th>ページ</th><th>ボタン</th><th>ここでできること</th></tr><tr><td>1</td><td>SEQ CTRL</td><td>メロディの高さ（PITCH）とオクターブを決める</td></tr><tr><td>2</td><td>SEQ EDIT</td><td>メロディの強さ（V1/V2）、長さ（GATE）、ところどころの高さ（TRANSPOSE）</td></tr><tr><td>3</td><td>SYN CTRL</td><td>シンセのステップ（ON）と、音のゆらぐ（GRIDE）</td></tr><tr><td>4</td><td>SYN EDIT</td><td>シンセの音色をくわしくつくる</td></tr><tr><td>5</td><td>DRUM CTRL</td><td>ドラムのリズムをボタンでつくる</td></tr><tr><td>6</td><td>DRUM EDIT</td><td>ドラムの音をかえる（音の高さ・長さ・ひずみなど）</td></tr><tr><td>7</td><td>MIDI</td><td>MIDIの機械をつなぐ</td></tr><tr><td>8</td><td>REC EXPORT</td><td>録音と、プロジェクトの書き出し・読みこみ</td></tr></table></div>
+<p>ページのとび方は2つ。</p>
+<ul><li>行きたいページのボタンを直接タップする。</li><li><strong>&lt;PAGE</strong> と <strong>PAGE&gt;</strong> でとなりへ。ページ、1→2→3→4→5→6をぐるぐるまわります（MIDIとRECはこのボタンでは行けません）。</li></ul>
+<p>いまいるページのボタンだけが、光っています。</p>
+<h2 id="s5">5. ドラムをならそう</h2>
+<p>ドラムは「DRUM CTRL」（ページ5）でリズムをつくり、「DRUM EDIT」（ページ6）で音をかえます。</p>
+<h3>リズムをつくる（DRUM CTRL）</h3>
+<ol><li>「DRUM CTRL」ボタンをタップ。</li><li>ボタンが4つの行にならんでいます。<strong>KICK（ドン）・SNR（タン）・CHH（閉じたハイハット、チッ）・OHH（開いたハイハット、チー）</strong>。</li><li>各てんに「1〜16」のボタンがあります。<strong>ボタンをタップすると、そのばしょで音がなる</strong>ようになります（光る）。もう一度タップすると消えます。</li><li>PLAYを押すと、1から16へと順番に音がなり、ぐるっともどってくりかえします。</li></ol>
+<p>たとえば、「1・5・9・13」にKICKをのせると、「ドン・ドン・ドン・ドン」という定番のリズムになります。</p>
+<p>各ステップの下には小さな「ACC」ボタンもあります。これは「アクセント」のこと。ここを光らせると、その音が強めになります。</p>
+<h3>パターン A / B / C</h3>
+<p>リズムは<strong>3つまで別々にとっておけます</strong>。左の <strong>PTN A / PTN B / PTN C</strong> をタップすると、切りかえられます。Aは「ふつうのリズム」、Bは「にぎやかなリズム」というふうに使い分けると便利です。</p>
+<h3>音をかえる（DRUM EDIT）</h3>
+<p>「DRUM EDIT」ボタンで、ドラムごとにノブがあらわれます。KICK・SNARE・HI HATにはこんなノブがあります。</p>
+<div class="tw"><table><tr><th>ノブ</th><th>どんなときにまわす？</th></tr><tr><td>TUNE</td><td>音の高さ。右で高い音、左で低い音</td></tr><tr><td>DECAY</td><td>音ののこる長さ。HI HATには開いた音用のO.DECAYもある</td></tr><tr><td>LEVEL</td><td>そのドラムの音の大きさ</td></tr><tr><td>DIST</td><td>ドラムの音を「ひずませる」スイッチ（ギュイーンと荒っぽくなる）</td></tr><tr><td>CRSH</td><td>ドラムの音を「ざらざら」にするスイッチ（クラッシャー）</td></tr><tr><td>FX1〜FX4</td><td>エフェクトにどれだけおくるか</td></tr></table></div>
+<p>ページの右したには、みんなでつかう <strong>DISTORTION</strong>（ひずみ）と <strong>CRUSH</strong>（ざらざら）の設定があります。</p>
+<ul><li>DISTORTION：DRIVE（ひずみのつよさ）、LEVEL（音量）、HARD / MID / SOFT（ひずみのしゅるい）</li><li>CRUSH：FREQ、LEVEL、12BIT / 8BIT / 4BIT（数字がちいさいほどざらざら）</li></ul>
+<h2 id="s6">6. メロディをつくろう</h2>
+<p>メロディは「SEQ A」と「SEQ B」の2つを同時にならせます。ギターとベースのようなもので、左の「SEQ A」「SEQ B」ボタンで、それぞれオン・オフできます。</p>
+<h3>音の高さを決める（SEQ CTRL）</h3>
+<ol><li>「SEQ CTRL」ボタンをタップ（ページ1）。</li><li>PITCH（縦の棒）を上下にすべらせる。上にあげると高い音、下げると低い音です。</li><li><strong>+ / − ボタン</strong>で、さらに1オクターブ（「ド」から次の「ド」までのぶん）、高く・低くできます。</li><li>4BIT PTN（ノブ）をまわすと、「どのタイミングで音をならすか」の型がかわります。右にまわすほど、なる数がふえる型になります。</li><li>ノブのうえの小さなランプ（LED）で、いまどこをならすかが見えます。</li></ol>
+<p>ことばでいうと、PITCHは「どの音か」、4BIT PTNは「いつならすか」です。</p>
+<h3>音のつよさと長さを決める（SEQ EDIT）</h3>
+<p>「SEQ EDIT」ボタン（ページ2）で、もう少しこまかくなおせます。</p>
+<div class="tw"><table><tr><th>これ</th><th>なにをする？</th></tr><tr><td>V1 / V2 ボタン</td><td>その音をどれだけ強くならすか（ベロシティ）を選ぶ</td></tr><tr><td>V0 / V1 / V2 ノブ</td><td>強さの大きさそのものを決める</td></tr><tr><td>GATE（縦の棒）</td><td>音の長さ。上げるとのびて、下げるとぷつっと短くなる</td></tr><tr><td>TRANSPOSE（ノブ）</td><td>4小節ごとに、メロディ全体の高さをいっせいにずらす</td></tr></table></div>
+<p><strong>TRANSPOSE</strong>を使うと、同じメロディでも「1小節目は普通、　3小節目はすこし低く」のように、変化をつけられます。</p>
+<p>ヒント：SEQ AとSEQ Bをすこしちがう高さにすると、きれいなハーモニー（重なりの音）になります。</p>
+<h2 id="s7">7. シンセの音色をかえよう</h2>
+<p>シンセは、ふしぎな音をつくる楽器です。AR-Xは「<strong>FM（エフエム）</strong>」というしくみで、キラキラした音や、金属のような音をつくれます。</p>
+<h3>FMってなに？</h3>
+<p>「メインの音」を、「ゆらし役の音」でゆらすと、ぶくぶくしたふしぎな音になります。ブランコの上で、もう一人が鎖をゆらすと、動きが複雑になるのと似ています。</p>
+<ul><li><strong>CAR（キャリア）</strong>：メインの音</li><li><strong>MOD（モジュレーター）</strong>：ゆらし役の音</li></ul>
+<h3>ページ3：SYN CTRL</h3>
+<ul><li><strong>ON（ボタン）</strong>：8つのステップで、そのばしょの設定を使うかどうか。</li><li><strong>GRIDE（グライド）</strong>：音がすーっと滑らかにつながる。ヘビがすべるような音になります。</li><li><strong>GRIDE TIME / MGR TIME（ノブ）</strong>：すべるのにかかる時間。</li><li><strong>STEP SEQ / LOOP X2 / AS 8TH</strong>：くりかえしのかたちをえらぶスイッチ。</li></ul>
+<h3>ページ4：SYN EDIT</h3>
+<p>ここが「音色工房」です。ノブがたくさんあるので、はじめは<strong>ここだけ</strong>さわるだけでも、十分あそべます（おすすめは TUNE・MOD IDX・ATK・REL）。</p>
+<div class="tw"><table><tr><th>ノブ・ボタン</th><th>やくわり</th></tr><tr><td>TUNE</td><td>音の高さをぜんたいにずらす</td></tr><tr><td>GAIN</td><td>音の大きさ</td></tr><tr><td>MOD IDX</td><td>ゆらし役のおおきさ（あげるとキラキラ・ザラザラする）</td></tr><tr><td>MOD FBK</td><td>ゆらし役に自分の音をもどして、ドロドロにする</td></tr><tr><td>MOD RATE / CAR RATE</td><td>ゆらし役・メインの音の高さの比</td></tr><tr><td>SIN / TRI / SQR / SAW</td><td>音の形。SINはやわらかい、SQRとSAWはとがっている</td></tr><tr><td>ATK / DEC / SUS / REL</td><td>音の始まりと終わりの形（下を見てね）</td></tr><tr><td>HI PASS / LO PASS</td><td>高い音・低い音をけずる</td></tr><tr><td>SERIES / PARALLEL</td><td>ゆらし役をメインにかけるか、ふたりを並べて鳴らすか</td></tr><tr><td>LFO RT / DEP / DEL</td><td>ビブラートのようなゆらぐ。速さ・おおきさ・始まるまでの時間</td></tr><tr><td>UNISON ON</td><td>同じ音をちょっとずつずらして重ね、分厚くする</td></tr><tr><td>4/8/16/32 BIT</td><td>わざとざらざらにする（数字が小さいほどざらざら）</td></tr><tr><td>FX1〜FX4</td><td>エフェクトへちょっと送る</td></tr></table></div>
+<p><strong>ATK / DEC / SUS / REL ってなに？</strong> ピアノは「ポンっとなって、すぐ小さくなる」、バイオリンは「すーっと大きくなって、ゆっくり消える」。その「形」を決めるのがこの4つです。</p>
+<ul><li>ATK（あたっく）：音が大きくなるまでの時間</li><li>DEC（でぃけい）：大きい音から、ちょうどよい大きさに落ちる時間</li><li>SUS（すてぃん）：のばしているあいだの音の大きさ</li><li>REL（りりーす）：鍵を離したあと、消えるまでの時間</li></ul>
+<p>こわれたところはないので、いろいろまわして、おもしろい音を探してみてください。</p>
+<h2 id="s8">8. エフェクト（XYパッド）であそぼう</h2>
+<p>エフェクトは、音にかける“魔法”です。こもった音にしたり、やまびこのようにエコーをつけたりできます。左のふちにある四角いパッドが「<strong>XY PAD</strong>」です。</p>
+<h3>つかいかた</h3>
+<ol><li><strong>FX EDIT</strong> ボタンで、あそぶエフェクトをえらぶ（FX1〜FX4）。</li><li>パッドを指でさわる。横（X）と縦（Y）の位置で、音がかわります。</li><li><strong>FX MIX</strong> ノブで、エフェクトのかかりぐあいをえらぶ。</li><li><strong>FX HOLD</strong> を光らせると、指をはなしてもその位置のままになります。</li></ol>
+<h3>4つのエフェクト</h3>
+<div class="tw"><table><tr><th>エフェクト</th><th>どんな音？</th><th>横（X）</th><th>縦（Y）</th></tr><tr><td>FX1</td><td>こもった音（ローパスフィルター）</td><td>右で明るい音、左でこもった音</td><td>上でクセがつよくなる</td></tr><tr><td>FX2</td><td>ジェット機のようなサーッという音（フランジャー）</td><td>ゆれるはやさ</td><td>よりつよくなる</td></tr><tr><td>FX3</td><td>やまびこ（ディレイ）</td><td>エコーの間隔</td><td>エコーのくりかえしのながさ</td></tr><tr><td>FX4</td><td>お風呂やホールのようなひびき（リバーブ）</td><td>ひびきのながさ</td><td>音のやわらかさ</td></tr></table></div>
+<h3>どの楽器にかける？</h3>
+<p>ドラムとシンセのページ（DRUM EDIT・SYN EDIT）にある <strong>FX1〜FX4</strong> のボタンで、かけたい楽器を選びます。光っているエフェクトに、その楽器の音が届きます。</p>
+<h2 id="s9">9. BPMとバランス</h2>
+<h3>BPM（はやさ）</h3>
+<p>BPMは「1分間にドンを何回うつか」という数です。数字が大きいほど、はやい曲になります。</p>
+<ul><li>左の <strong>BPMノブ</strong> をまわす。</li><li>できるはやさは 40 から 240 まで。はじめは 120 です。</li><li>いまの数字は、すぐ上の数字の表示で確かめられます。</li></ul>
+<p>ゲームのキャラでいうと、「あるくはやさ」をきめるものです。</p>
+<h3>BALANCE SYN-DRM</h3>
+<p>シンセ（SYN）とドラム（DRM）の、音の大きさのつりあいをとるノブです。シーソーのように、どちらかを大きくすると、もういっぽうが小さくなります。</p>
+<ul><li>真ん中：シンセとドラムがちょうどよいバランス</li><li>左にまわす：ドラムが大きく聞こえる</li><li>右にまわす：シンセが大きく聞こえる</li></ul>
+<p>このノブはどのページにもあるので、いつでもすぐにつかえます。</p>
+<h2 id="s10">10. 保存とよびだし</h2>
+<p>つくった音やリズムは、「トランク」のようにしまっておけます。すこしのきまりを覚えると、むずかしくありません。</p>
+<h3>カギをかんたんにいうと</h3>
+<ul><li><strong>USER A / USER B / USER C</strong>：3つの「ことばこ」。はこをえらぶボタンです。</li><li><strong>スロット 1・2・3・4</strong>：はこの中の、おへやの番号です。、1つのはこに4つ入ります。</li><li><strong>SAVE</strong>：「いまのページの内容をしまう」ときに押すボタン。</li></ul>
+<p>ただし、<strong>ページごとに別々に保存</strong>されます。たとえば、DRUM CTRLで保存したものは、DRUM CTRLのときだけよびだせます。</p>
+<h3>保存する</h3>
+<ol><li>保存したいページをひらく。</li><li>USER A / B / C のどれかをえらぶ。</li><li><strong>SAVE</strong> をタップ。ボタンが光ります。</li><li>保存したい番号（1〜4）をタップ。</li><li>「保存しますか？」と聞かれるので、<strong>YES</strong> をタップ。NOは「ここにはしまわない」、CANCELは「やめる」です。</li></ol>
+<p>SEQ CTRL / SEQ EDIT では、「SEQ A を保存する？」ともう一度ききます。うっかり間違えて上書きしないためです。</p>
+<p>【だいじ】すでに入っている番号に保存すると、<strong>もとの内容は消えます</strong>。大切な音は、あいている番号を使いましょう。</p>
+<h3>よびだす</h3>
+<ol><li>よびだしたいページをひらく。</li><li>USER A / B / C をえらぶ。</li><li><strong>SAVEを押さずに</strong>、番号（1〜4）をタップ。</li></ol>
+<p>「空っぽ」と出たら、その番号にはまだ何も入っていません。</p>
+<p>アプリには、はじめからデモ用のメロディやシンセ音色が4つ入っています（USER A）。上書きしてもかまいません。</p>
+<h3>プロジェクトをファイルにする（EXPORT / IMPORT）</h3>
+<p>「REC EXPORT」ページには、<strong>EXPORT</strong> と <strong>IMPORT</strong> ボタンがあります。</p>
+<ul><li>EXPORT：いまの作品をファイルにして、シェアのメニューから保存・送信できます。</li><li>IMPORT：保存したファイルを選んで、もとにもどします。</li></ul>
+<p>アプリを入れ直すときや、ともだちに作品をわたすときに便利です。</p>
+<h2 id="s11">11. ほかのアプリとテンポをあわせる（Ableton Link）</h2>
+<p>Linkは、「みんなで同じテンポでえんそうする」ためのしくみです。バンドで、ドラムの人をみんなが見てリズムをそろえるのと同じです。同じしくみに対応した他のアプリや、ほかのiPhone・iPadと、テンポやスタートをそろえられます。</p>
+<h3>つかいかた</h3>
+<ol><li>アプリを、同じWi‑Fiにつながっている端末といっしょに使う。</li><li>左の「LINK」ボタンをタップ。</li><li>Linkの設定画面がひらくので、スイッチをオンにする。</li><li>初めてのとき、iPhoneから「ローカルネットワークのアクセス」をこうしていいかと聞かれたら、「許可」をえらぶ。</li><li>なかまをさがしているあいだは、「Ableton Link: searching for peers…」と出ます。見つかると、テンポが自動でそろいます。</li></ol>
+<p>オフにしたいときは、もう一度「LINK」をタップします。</p>
+<h3>こんなときは大丈夫</h3>
+<ul><li>ほかになかまがいないときでも、アプリはふつうにつかえます。</li><li>Linkをオフにしても、再生中の音はそのまま続きます。</li><li>Linkを使っているときは、PLAYを押すと、ほかのアプリとビート（拍）の位置をあわせて始まります。</li></ul>
+<h2 id="s12">12. MIDIキーボード・コントローラーをつなぐ</h2>
+<p>MIDIは、楽器やコントローラーとアプリをつなぐ、“言葉”のようなものです。ノブやフェーダーがついたいどうきをつなげると、画面のノブを、本物のつまみでうごかせます。</p>
+<h3>つないで、紐づける（LEARN）</h3>
+<ol><li>コントローラーをiPhone・iPadにつなぐ。</li><li>「MIDI」ボタンでMIDIページをひらく。</li><li>「MIDI」ページのリストから、つないだ機械をえらぶ。「Connected」と出ればOKです。</li><li><strong>LEARN</strong> をタップ（ボタンが光る）。</li><li>画面の<strong>赤いボタン・ノブ・フェーダー</strong>をタップ。</li><li>本物のコントローラーをうごかす。「learned（覚えた）」とでれば紐づけ完了です。</li></ol>
+<p>これをくりかえせば、好きなだけ紐づけられます。紐づけは、アプリをとじても覇えています。</p>
+<h3>らくに紐づけする（NAV LEARN）</h3>
+<p><strong>NAV LEARN</strong> を押すと、アプリが「これをうごかして」「次はこれ」と順番に教えてくれます。コントローラーのつまみを順番に動かすだけで、たくさん紐づけできます。やめたいときは、もう一度 NAV LEARN を押します。</p>
+<h3>やり直す</h3>
+<p><strong>CLEAR ALL</strong> を押すと、紐づけがぜんぶ消えます。</p>
+<h3>ふしぎなことにびっくりしないで</h3>
+<p>コントローラーのツマミをうごかしても、すぐには音がかわらないことがあります。これは、画面のノブが急にジャンプしないようにする安全のしくみです。ツマミを画面のノブがいる位置まで動かすと、つながって動き始めます。</p>
+<p>「MIDI MONITOR」のところに、いま届いている信号が表示されるので、うまくつながっているか確かめるのに便利です。</p>
+<h2 id="s13">13. 録音 (REC)</h2>
+<p>つくった音を、そのまま音のファイル（WAV）にして残せます。カセットテープに録音するようなものです。アプリで鳴っている音をそのまま録るので、マイクはいりません。</p>
+<h3>やりかた</h3>
+<ol><li>「REC EXPORT」ボタンで、録音ページをひらく。</li><li>録音する長さをえらぶ。<strong>MANUAL</strong>（自分で止める）、1 BAR、2 BARS、4 BARS、8 BARS、16 BARS。</li><li>PLAYで音をならす。</li><li><strong>REC</strong>をタップ。「● REC…」と、いまの秒数が出ます。</li><li>MANUALのときは、もう一度 REC をタップすると止まります。小節をえらんだときは、その長さで自動で止まります。</li><li>止まると、WAVファイルができます。</li></ol>
+<p>「1小節」は「4拍」のことです。BPMが120なら、1小節は2秒です。</p>
+<p>テンポやバランスを決めてから録音すると、やり直しがすくなくてすみます。</p>
+<h2 id="s14">14. こまったときは</h2>
+<div class="tw"><table><tr><th>こまったこと</th><th>ためしてみてね</th></tr><tr><td>音がでない</td><td>iPhoneの音量をあげる。横のスイッチ（マナーモード）をオフにする。PLAYを押したか確かめる。KICK・SNARE・HAT・SEQ A・SEQ Bが光っているか見る（消えているとだまっています）。</td></tr><tr><td>ドラムだけ、またはシンセだけが小さい</td><td>BALANCE SYN-DRM ノブが片方によりすぎていないか確かめて、真ん中にもどしてみる。</td></tr><tr><td>ホーム画面にもどると音が止まる</td><td>iPhoneの「設定」→ AR-X → 「バックグラウンド再生」がオンになっているか確かめる。オンなら、ホーム画面にもどっても鳴り続けます。オフなら、アプリをはなれたところで止まります（バッテリーをつかいません）。</td></tr><tr><td>音がときどきとび・リズムがずれる</td><td>ほかのアプリをとじる。端末があつくなっていないか確かめる。これでもだめなら、アプリをいったんとじて、もう一度ひらく。</td></tr><tr><td>シンセの音だけが出なくなった</td><td>アプリをいったんとじて、もう一度ひらく。それでも直らないときは、いつ・どのページで起きたかをつたえてください。</td></tr><tr><td>Linkでなかまが見つからない</td><td>同じWi‑Fiにつながっているか確かめる。iPhoneの「設定」で、AR-Xの「ローカルネットワーク」がオンか確かめる。LINKを一度オフにして、もう一度オンにする。</td></tr><tr><td>MIDIの機械が見つからない</td><td>ケーブルをつなぎ直す。MIDIページで機械をえらび直す。</td></tr><tr><td>つくった音をうっかりけした</td><td>保存するときは、「保存しますか？」に YES をただしく答える。大切な作品は、あとでEXPORTでファイルにしてしまっておく。</td></tr></table></div>
+<h2 id="s15">15. ことばじてん</h2>
+<div class="tw"><table><tr><th>ことば</th><th>やさしいいみ</th></tr><tr><td>BPM</td><td>テンポ。リズムのはやさ</td></tr><tr><td>シーケンサー</td><td>音を順番にならべて、自動でくりかえすしくみ</td></tr><tr><td>ステップ</td><td>リズムのマス目、1つのボタンが1マス</td></tr><tr><td>小節（しょうせつ）</td><td>4拍ぶんのひとまとまり</td></tr><tr><td>パターン</td><td>リズムの型</td></tr><tr><td>シンセ</td><td>ふしぎな音をつくる楽器</td></tr><tr><td>ノブ</td><td>まわすツマミ</td></tr><tr><td>フェーダー</td><td>上下にすべらせる棒</td></tr><tr><td>エフェクト</td><td>音のおけしょう</td></tr><tr><td>オクターブ</td><td>同じ名前の音で、高い・低いの違う音。+で高く、−で低く</td></tr><tr><td>ベロシティ</td><td>音の強さ。強くたたくと大きい音</td></tr><tr><td>ゲート（GATE）</td><td>音の長さ</td></tr><tr><td>アクセント（ACC）</td><td>ここを強く！という目印</td></tr><tr><td>ミュート</td><td>音を一時的にだまらせること</td></tr><tr><td>クラッシャー（CRUSH）</td><td>音をざらざらにする効果</td></tr><tr><td>ディストーション（DIST）</td><td>音をひずませる効果</td></tr><tr><td>MIDI</td><td>楽器とアプリをつなぐ共通の言葉</td></tr><tr><td>LINK</td><td>ほかのアプリとテンポをあわせるしくみ</td></tr><tr><td>WAV</td><td>音をそのままとっておくファイル</td></tr></table></div>
+
+<footer>© 2026 AR-X Groovebox · <a href="./">サポート＆プライバシーポリシー</a></footer>
+</div>
+</body>
+</html>
